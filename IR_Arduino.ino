@@ -61,17 +61,7 @@ void loop() {
   }
 }
 //funcion que imprime los creditos
-void imprimirCreditos() {
-  Serial.println("Créditos:");
-  Serial.println("Equipo 2");
-  Serial.println("Integrantes:");
-  Serial.println("Diaz Espinosa Christian Alejandro");
-  Serial.println("Garcia Ramos Joe Jafet");
-  Serial.println("Sanchez Vivar Zaida");
-  Serial.println("Velazco Hernandez Angel Uriel");
-  Serial.println("Yanez Ramirez Itzel");
-  Serial.println("Roa Carrillo Zayuri Denisse");
-}
+void imprimirCreditos() {}
 
 void menu(char opc) {
   switch (opc) {
