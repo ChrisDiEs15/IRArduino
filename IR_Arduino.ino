@@ -10,11 +10,13 @@ void setup() {
   Serial.println(F("START " __FILE__ " from " __DATE__ "\r\n Using library version " VERSION_IRREMOTE));  // se imprime en el monitor la informacion del archivo de donde se esta compilando, la fecha y la version de libreria que se esta ocupando
   Serial.println("Conexión Serial realizada");
 
-  IrReceiver.begin(IR_RECEIVE_PIN);  // Inicializa el receptor IR en el pin especificado
-  Serial.print(F("Listo para recibir señal de "));
-  Serial.println();
+   IrReceiver.begin(IR_RECEIVE_PIN);  // Inicializa el receptor IR en el pin especificado
+  Serial.print(F("Listo para recibir señal en el pin "));
+  Serial.println(IR_RECEIVE_PIN);
+
   IrSender.begin(IR_SEND_PIN);  //Inicializa el emisor en el pin especificado
-  Serial.print(F("Emisor Iniciado correctamente"));
+  Serial.print(F("Emisor Iniciado correctamente en el pin"));
+  Serial.println(IR_SEND_PIN);
 }
 
 void loop() {
@@ -32,9 +34,9 @@ void loop() {
     Serial.println("Listo para recibir el siguiente codigo");
   }
 
-
-  if (Serial.available()) {
+if (Serial.available()) {
     // Lee el carácter que se envia desde el bluetooth
+    //TODO Eliminar la cadena recivida desde el dispositivo bluetooth
     char opc = Serial.read();
     menu(opc);  // Llama a la función menú
   }
